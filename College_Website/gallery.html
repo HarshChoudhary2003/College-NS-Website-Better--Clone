@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Govt. Degree College Nagrota Surian</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./images/logo.png" type="image/png">
+    <style>
+        /* Specific styles for gallery page */
+        .gallery-filter-buttons {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .gallery-filter-buttons button {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+        }
+        .gallery-filter-buttons button.active,
+        .gallery-filter-buttons button:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item .photo-title {
+            padding: 15px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Lightbox Overlay (for future JS implementation) */
+        .lightbox-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+        .lightbox-caption {
+            color: var(--text-dark);
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="./images/logo.png" alt="College Logo" class="college-logo">
+                    <div class="college-name-tagline">
+                        <h1>Govt. Degree College Nagrota Surian</h1>
+                        <p class="tagline">An Institution of Excellence in Higher Education</p>
+                    </div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="notices.html">Notices</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="student-corner.html">Student Corner</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner gallery-banner">
+            <div class="container">
+                <h2>Photo Gallery</h2>
+            </div>
+        </section>
+
+        <section class="gallery-content section-padding">
+            <div class="container">
+                <p class="intro-text">Explore the vibrant life and events at Govt. Degree College Nagrota Surian through our photo gallery. We capture moments of academic excellence, cultural celebrations, sports achievements, and community service.</p>
+
+                <div class="gallery-filter-buttons">
+                    <button class="active" data-category="all">All Photos</button>
+                    <button data-category="cultural">Cultural Events</button>
+                    <button data-category="nss">NSS Activities</button>
+                    <button data-category="sports">Sports Events</button>
+                    <button data-category="campus">Campus Life</button>
+                    <button data-category="others">Others</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="cultural">
+                        <img src="images/gallery/cultural_event_1.jpg" alt="Annual Fest 2024">
+                        <div class="photo-title">Annual Fest 2024</div>
+                    </div>
+                    <div class="gallery-item" data-category="nss">
+                        <img src="images/gallery/nss_camp_1.jpg" alt="NSS Cleanliness Drive">
+                        <div class="photo-title">NSS Cleanliness Drive</div>
+                    </div>
+                    <div class="gallery-item" data-category="sports">
+                        <img src="images/gallery/sports_day_1.jpg" alt="Annual Sports Day">
+                        <div class="photo-title">Annual Sports Day</div>
+                    </div>
+                    <div class="gallery-item" data-category="campus">
+                        <img src="images/gallery/campus_view_1.jpg" alt="College Campus View">
+                        <div class="photo-title">College Campus View</div>
+                    </div>
+                     <div class="gallery-item" data-category="cultural">
+                        <img src="images/gallery/cultural_event_2.jpg" alt="Freshers Welcome">
+                        <div class="photo-title">Freshers Welcome</div>
+                    </div>
+                    <div class="gallery-item" data-category="sports">
+                        <img src="images/gallery/sports_day_2.jpg" alt="Cricket Match">
+                        <div class="photo-title">Cricket Tournament</div>
+                    </div>
+                    <div class="gallery-item" data-category="nss">
+                        <img src="images/gallery/nss_camp_2.jpg" alt="Blood Donation Camp">
+                        <div class="photo-title">Blood Donation Camp</div>
+                    </div>
+                    <div class="gallery-item" data-category="others">
+                        <img src="images/gallery/workshop_1.jpg" alt="Workshop on Digital Skills">
+                        <div class="photo-title">Digital Skills Workshop</div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox-overlay">
+        <div class="lightbox-content">
+            <button class="lightbox-close"><i class="fas fa-times"></i></button>
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-college">
+                    <h3>GDC Nagrota Surian</h3>
+                    <p>Committed to nurturing talent and fostering academic excellence in a vibrant learning environment.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3>Important Links</h3>
+                    <ul>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="notices.html">Notices</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="student-corner.html">Student Corner</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-info">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nagrota Surian, District Kangra, H.P., India - 176027</p>
+                    <p><i class="fas fa-phone-alt"></i> +91-XXX-XXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@gdcnagrotasurian.ac.in">info@gdcnagrotasurian.ac.in</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Govt. Degree College Nagrota Surian. All rights reserved.</p>
+                <p>Developed by [Your Name/Team Name]</p>
+                <a href="admin_login.html" class="admin-login-link">Admin Login</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Gallery filtering (client-side JS)
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.gallery-filter-buttons button');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const category = button.dataset.category;
+
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block'; // Or 'flex', 'grid'
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Basic Lightbox (for future JS implementation)
+            const lightboxOverlay = document.querySelector('.lightbox-overlay');
+            const lightboxImage = document.querySelector('.lightbox-image');
+            const lightboxCaption = document.querySelector('.lightbox-caption');
+            const lightboxClose = document.querySelector('.lightbox-close');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    lightboxImage.src = item.querySelector('img').src;
+                    lightboxCaption.textContent = item.querySelector('.photo-title').textContent;
+                    lightboxOverlay.style.display = 'flex';
+                });
+            });
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxOverlay.style.display = 'none';
+            });
+
+            lightboxOverlay.addEventListener('click', (e) => {
+                if (e.target === lightboxOverlay) {
+                    lightboxOverlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

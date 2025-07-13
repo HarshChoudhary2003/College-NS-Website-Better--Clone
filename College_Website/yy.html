@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Admission Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="yy.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>GOVT. DEGREE COLLEGE, NAGROTA SURIAN</h1>
+    <h3>DISTT. KANGRA, H.P. 176027</h3>
+    <p class="admission-title">ADMISSION FORM 2025-26<br><br>BA/B.Com/B.Sc/BCA - 1st/2nd/3rd Year/Semester</p>
+
+    <div class="step-indicator">
+        <div class="step active" data-step="0">1. Personal Info</div>
+        <div class="step" data-step="1">2. Course & Year/Semester</div>
+        <div class="step" data-step="2">3. Document Upload</div>
+        <div class="step" data-step="3">4. Anti-Ragging Pledge</div>
+        <div class="step" data-step="4">5. Declaration</div>
+    </div>
+
+    <form id="admissionForm">
+
+        <div class="form-step active">
+            <div class="form-columns">
+                <div class="form-col">
+                    <label for="classYearSem">Class & Year/Sem:*</label>
+                    <input type="text" id="classYearSem" required size="30">
+
+                    <label for="candidateName">Name of Candidate:*</label>
+                    <input type="text" id="candidateName" required size="40">
+
+                    <label for="gender">Gender:*</label>
+                    <select id="gender" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="motherName">Mother's Name:*</label>
+                    <input type="text" id="motherName" size="40" required>
+
+                    <label for="studentMobile">Student Mobile No.:*</label>
+                    <input type="text" id="studentMobile" maxlength="10" required pattern="[0-9]{10}" title="Please enter a 10-digit mobile number">
+                    
+                    <label for="studentBankAccount">Student Bank Account No.:</label>
+                    <input type="text" id="studentBankAccount" size="25">
+
+                    <label for="aadhaarNo">Aadhaar No.:*</label>
+                    <input type="text" id="aadhaarNo" placeholder="0000-0000-0000" maxlength="12" required pattern="[0-9]{12}" title="Please enter a 12-digit Aadhaar number">
+
+                    <label for="category">Category:*</label>
+                    <select id="category" required>
+                        <option value="">Select</option>
+                        <option value="General">General</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="OBC">OBC</option>
+                    </select>
+
+                    <label for="permanentAddress">Permanent Address:</label>
+                    <input type="text" id="permanentAddress" size="50" required>
+                    
+                    <label for="state">State:*</label>
+                    <select id="state" required>
+                        <option value="">Select State</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Ladakh">Ladakh</option>
+                    </select>
+                    <label for="lastYearCollegeRollNo">Last Year College Roll No.:</label>
+                    <input type="text" id="lastYearCollegeRollNo" maxlength="5">
+                </div>
+                <div class="form-col">
+                    <label for="abcId">ABC ID:</label>
+                    <input type="text" id="abcId" size="25">
+
+                    <label for="dob">Date of Birth:*</label>
+                    <input type="date" id="dob" required>
+                    
+                    <label for="fatherName">Father's Name:*</label>
+                    <input type="text" id="fatherName" size="40" required>
+
+                    <label for="parentContact">Parent Contact No.:*</label>
+                    <input type="text" id="parentContact" maxlength="10" required pattern="[0-9]{10}" title="Please enter a 10-digit mobile number">
+                    
+                    <label for="studentEmail">Student Email ID:*</label>
+                    <input type="email" id="studentEmail" size="30" required>
+
+                    <label for="annualFamilyIncome">Annual Family Income:</label>
+                    <input type="text" id="annualFamilyIncome" maxlength="8">
+
+                    <label for="religion">Religion:*</label>
+                    <select id="religion">
+                        <option value="">Select</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Muslim">Muslim</option>
+                        <option value="Sikh">Sikh</option>
+                        <option value="Christian">Christian</option>
+                    </select>
+
+                    <label for="subCategory">Sub-category:</label>
+                    <select id="subCategory">
+                        <option value="">Select</option>
+                        <option value="IRDP">IRDP</option>
+                        <option value="PH">PH</option>
+                        <option value="Ex-Serviceman">Ex-Serviceman</option>
+                    </select>
+                    
+                    <label for="correspondenceAddress">Address for Correspondence:*</label>
+                    <input type="text" id="correspondenceAddress" size="50" required>
+
+                    <label for="pinCode">Pin code:* </label>
+                    <input type="text" id="pinCode" maxlength="6" required pattern="[0-9]{6}" title="Please enter a 6-digit PIN code">
+                
+                    <label for="lastYearUniversityRollNo">Last Year University Roll No.:</label>
+                    <input type="text" id="lastYearUniversityRollNo" size="20">
+                </div>
+            </div>
+            <h2><u>Educational Qualification*</u> </h2>
+            <table class="qualification-table" style="width:100%; max-width:100%; margin-top: 4%;">
+                <thead>
+                    <tr>
+                        <th style="width:22%;">Qualification</th>
+                        <th style="width:32%;">Board/University</th>
+                        <th style="width:23%;">Year of Passing</th>
+                        <th style="width:23%;">Percentage/CGPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label>10th</label></td>
+                        <td><input type="text" id="qual10thBoard" placeholder="Enter Board/University" style="width:95%;" required></td>
+                        <td><input type="text" id="qual10thYear" placeholder="Year" style="width:90%;" maxlength="4" pattern="[0-9]{4}" title="Please enter a 4-digit year" required></td>
+                        <td><input type="text" id="qual10thPercentage" placeholder="Percentage" style="width:90%;" pattern="[0-9]{1,2}(\.[0-9]{1,2})?" title="Please enter a valid percentage (e.g., 85 or 85.50)" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>12th</label></td>
+                        <td><input type="text" id="qual12thBoard" placeholder="Enter Board/University" style="width:95%;" required></td>
+                        <td><input type="text" id="qual12thYear" placeholder="Year" style="width:90%;" maxlength="4" pattern="[0-9]{4}" title="Please enter a 4-digit year" required></td>
+                        <td><input type="text" id="qual12thPercentage" placeholder="Percentage" style="width:90%;" pattern="[0-9]{1,2}(\.[0-9]{1,2})?" title="Please enter a valid percentage (e.g., 85 or 85.50)" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>BA/BSc/BCom/BCA-I</label></td>
+                        <td><input type="text" id="qualUG1Board" placeholder="Enter Board/University" style="width:95%;"></td>
+                        <td><input type="text" id="qualUG1Year" placeholder="Year" style="width:90%;" maxlength="4" pattern="[0-9]{4}" title="Please enter a 4-digit year"></td>
+                        <td><input type="text" id="qualUG1Percentage" placeholder="Percentage/CGPA" style="width:90%;"></td>
+                    </tr>
+                    <tr>
+                        <td><label>BA/BSc/BCom/BCA-II</label></td>
+                        <td><input type="text" id="qualUG2Board" placeholder="Enter Board/University" style="width:95%;"></td>
+                        <td><input type="text" id="qualUG2Year" placeholder="Year" style="width:90%;" maxlength="4" pattern="[0-9]{4}" title="Please enter a 4-digit year"></td>
+                        <td><input type="text" id="qualUG2Percentage" placeholder="Percentage/CGPA" style="width:90%;"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="form-buttons">
+                <button type="reset" class="reset-btn" onclick="resetPersonalInfo()">Reset</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+        </div>
+
+        <div class="form-step">
+            <div class="form-group">
+                <label>Select Your Course:</label>
+                <input type="radio" name="course" value="BA" id="courseBA"> BA
+                <input type="radio" name="course" value="BCom" id="courseBCom"> BCom
+                <input type="radio" name="course" value="BSc" id="courseBSc"> BSc
+                <input type="radio" name="course" value="BCA" id="courseBCA"> BCA
+            </div>
+
+            <div class="step-two-content">
+                <div class="form-group" id="yearSelection" style="display: none;">
+                    <label for="yearDropdown">Select Year:</label>
+                    <select id="yearDropdown">
+                        <option value="">Select Year</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                    </select>
+                </div>
+
+                <div class="subject-selection" id="baSelection">
+                    <h4>BA Subjects (Choose 3 Electives for 1st Year)</h4>
+                    <div class="checkbox-container" id="baCheckboxes"></div>
+                </div>
+
+                <div class="subject-selection" id="bcomSelection">
+                    <h4>BCom Subjects (Compulsory)</h4>
+                    <div class="checkbox-container" id="bcomCheckboxes">
+                        </div>
+                </div>
+
+                <div class="form-group" id="bscOptions" style="display: none;">
+                    <label>Select BSc Type:</label>
+                    <input type="radio" name="bscType" value="Medical" id="bscMedical"> Medical
+                    <input type="radio" name="bscType" value="Non-Medical" id="bscNonMedical"> Non-Medical
+                </div>
+                <div class="subject-selection" id="bscSelection">
+                    <h4>BSc Subjects</h4>
+                    <div class="checkbox-container" id="bscCheckboxes"></div>
+                </div>
+
+                <div class="form-group" id="bcaSemesters" style="display: none;">
+                    <label for="bcaSemesterDropdown">Select Semester:</label>
+                    <select id="bcaSemesterDropdown">
+                        <option value="">Select Semester</option>
+                        <option value="1">1st Sem</option>
+                        <option value="2">2nd Sem</option>
+                        <option value="3">3rd Sem</option>
+                        <option value="4">4th Sem</option>
+                        <option value="5">5th Sem</option>
+                        <option value="6">6th Sem</option>
+                    </select>
+                </div>
+                <div class="subject-selection" id="bcaSelection">
+                    <h4>BCA Subjects</h4>
+                    <div class="checkbox-container" id="bcaCheckboxes"></div>
+                </div>
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+        </div>
+
+        <div class="form-step">
+            <p style="color: red; font-weight: bold;">Note: Please Upload all the documents</p>
+            <label for="marksheet10th">10th Marksheet:</label>
+            <input type="file" id="marksheet10th" required>
+            <label for="marksheet12th">12th Marksheet:</label>
+            <input type="file" id="marksheet12th" required>
+            <label for="bonafideCert">Bonafide Certificate:</label>
+            <input type="file" id="bonafideCert" required>
+            <label for="categoryCert">Category Certificate:</label>
+            <input type="file" id="categoryCert"> <label for="passportPhoto">Passport Size Photo:</label>
+            <input type="file" name="passportPhoto" id="passportPhoto" accept="image/*" required>
+            <img id="passportPhotoPreview" src="" alt="Passport Photo Preview" style="display:none; max-width:150px; margin-top:10px; border: 1px solid #ddd;">
+
+            <label for="aadhaarCard">Aadhaar Card:</label>
+            <input type="file" id="aadhaarCard" name="aadhaarCard" accept="image/*" required>
+            <img id="aadhaarCardPreview" src="" alt="Aadhaar Card Preview" style="display:none; max-width:200px; margin-top:10px; border: 1px solid #ddd;">
+
+            <div class="form-buttons">
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+        </div>
+
+        <div class="form-step">
+            <h2><u>ANTI-RAGGING PLEDGE</u></h2>
+            <div class="declaration">
+                <p><b>I voluntarily pledge:</b></p>
+                <ul type="square">
+                    <li>That I will not indulge in ragging in any form.</li>
+                    <li>That I will report any act of ragging that comes to my notice directly or indirectly to the Anti-Ragging Committee forthwith.</li>
+                    <li>That my objective is to make Govt. Degree College, Nagrota Surian a <b>ZERO RAGGING CAMPUS</b>.</li>
+                    <li>I understand that ragging is a serious crime and strict action will be taken against me if I am found guilty.</li>
+                </ul>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="pledgeCheck" required>
+                <label for="pledgeCheck">I agree to follow the above declaration.</label>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+        </div>
+
+        <div class="form-step">
+            <h2>Self-Declaration Form</h2>
+            <h3><u>Undertaking by the Applicant</u></h3>
+            <div class="declaration">
+                <ol>
+                    <li>I am applying for admission at the wish of my parent/guardian.</li>
+                    <li>I will abide by college rules and anti-ragging regulations.</li>
+                    <li>I will pay all dues on time and maintain 75% attendance.</li>
+                    <li>I will take part in required exams and avoid political activity.</li>
+                    <li>I agree to anti-tobacco and anti-drug policies and understand consequences.</li>
+                </ol>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" required id="studentDeclaration">
+                <label for="studentDeclaration">I agree to follow the above declaration.</label>
+            </div>
+
+            <h3><u>Declaration by Parent/Guardian</u></h3>
+            <div class="declaration">
+                <p>I declare that my ward seeks admission with my consent. I will ensure fee payment, monitor attendance and behavior, and accept college actions in case of misconduct.</p>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" required id="parentDeclaration">
+                <label for="parentDeclaration">I agree to follow the above declaration.</label>
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" class="prev-btn">Back</button>
+                <button type="submit" id="generatePdf">Submit</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script src="yy.js"></script>
+
+</body>
+</html>

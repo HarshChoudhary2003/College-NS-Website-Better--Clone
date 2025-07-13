@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Govt. Degree College Nagrota Surian</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./images/logo.png" type="image/png">
+    <style>
+        /* Specific styles for contact page */
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .contact-info-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            padding: 25px;
+            text-align: center;
+        }
+        .contact-info-card i {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .contact-info-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        .contact-info-card p {
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+        .contact-info-card a {
+            font-weight: 600;
+        }
+
+        .google-map-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .google-map-section iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            display: block;
+        }
+
+        .contact-form-section .card {
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto; /* Center the form card */
+        }
+        .contact-form-section h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.2);
+            outline: none;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form button[type="submit"] {
+            width: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="./images/logo.png" alt="College Logo" class="college-logo">
+                    <div class="college-name-tagline">
+                        <h1>Govt. Degree College Nagrota Surian</h1>
+                        <p class="tagline">An Institution of Excellence in Higher Education</p>
+                    </div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="notices.html">Notices</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="student-corner.html">Student Corner</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner contact-banner">
+            <div class="container">
+                <h2>Contact Us</h2>
+            </div>
+        </section>
+
+        <section class="contact-content section-padding">
+            <div class="container">
+                <p class="intro-text">We're here to help! Whether you have questions about admissions, courses, or general inquiries, feel free to reach out to us. You can find our contact details below or send us a message directly through the contact form.</p>
+
+                <div class="contact-details-grid">
+                    <div class="contact-info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Our Location</h3>
+                        <p>Govt. Degree College Nagrota Surian</p>
+                        <p>District Kangra, H.P., India - 176027</p>
+                        <p><a href="https://maps.app.goo.gl/YOUR_Maps_LINK" target="_blank">Get Directions</a></p>
+                    </div>
+                    <div class="contact-info-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Phone Numbers</h3>
+                        <p>General Enquiries: +91-XXX-XXXXXXX</p>
+                        <p>Admission Helpline: +91-XXX-XXXXXXX</p>
+                        <p>Principal's Office: +91-XXX-XXXXXXX</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Address</h3>
+                        <p>General: <a href="mailto:info@gdcnagrotasurian.ac.in">info@gdcnagrotasurian.ac.in</a></p>
+                        <p>Admissions: <a href="mailto:admissions@gdcnagrotasurian.ac.in">admissions@gdcnagrotasurian.ac.in</a></p>
+                        <p>Principal: <a href="mailto:principal@gdcnagrotasurian.ac.in">principal@gdcnagrotasurian.ac.in</a></p>
+                    </div>
+                </div>
+
+                <div class="google-map-section">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1712.9806443423795!2d76.01211718042468!3d31.99619179979313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b106422d7d549%3A0xf657d229e34e565!2sGovt.%20Degree%20College%20Nagrota%20Surian!5e0!3m2!1sen!2sin!4v1716301385418!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="contact-form-section card">
+                    <h3>Send Us a Message</h3>
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="action-button">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-college">
+                    <h3>GDC Nagrota Surian</h3>
+                    <p>Committed to nurturing talent and fostering academic excellence in a vibrant learning environment.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3>Important Links</h3>
+                    <ul>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="notices.html">Notices</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="student-corner.html">Student Corner</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-info">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nagrota Surian, District Kangra, H.P., India - 176027</p>
+                    <p><i class="fas fa-phone-alt"></i> +91-XXX-XXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@gdcnagrotasurian.ac.in">info@gdcnagrotasurian.ac.in</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Govt. Degree College Nagrota Surian. All rights reserved.</p>
+                <p>Developed by [Your Name/Team Name]</p>
+                <a href="admin_login.html" class="admin-login-link">Admin Login</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
